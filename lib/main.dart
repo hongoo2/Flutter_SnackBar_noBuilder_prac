@@ -35,10 +35,12 @@ class MySnackBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: RaisedButton(
+      child: ElevatedButton(
+        //recommended to use ElevatedButton instead
         child: Text('show Me'),
         onPressed: () {
-          Scaffold.of(context).showSnackBar(SnackBar(content: Text('Hello')));
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text('Hello')));
         },
       ),
     );
